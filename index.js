@@ -7,3 +7,9 @@ export {
   DataTableRedux,
   dataTableReducer
 };
+
+module.exports = {
+  DataTable,
+  DataTableRedux,
+  dataTableReducer
+};
