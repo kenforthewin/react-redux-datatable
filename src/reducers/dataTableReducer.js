@@ -1,3 +1,5 @@
+var merge = require('merge')
+
 const INITIAL_STATE = {
   draw: 0,
   page: 1,
@@ -16,68 +18,52 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'table_loading':
-      return {
-        ...state,
+      return state.merge({
         loading: true,
-        draw: state.draw + 1
-      }
+        draw: state.draw + 1 })
     case 'search_table':
-      return {
-        ...state,
+      return state.merge({
         loading: false,
         data: action.data,
         totalRecords: action.totalRecords,
         page: action.page,
-        searchValue: action.searchValue
-      }
+        searchValue: action.searchValue })
     case 'go_to_page':
-      return {
-        ...state,
+      return state.merge({
         loading: false,
         page: action.page,
-        data: action.data,
-      }
+        data: action.data })
     case 'change_per_page':
-      return {
-        ...state,
+      return state.merge({
         loading: false,
         perPage: action.perPage,
         data: action.data,
-        page: 1
-      }
+        page: 1 })
     case 'sort_table':
-      return {
-        ...state,
+      return state.merge({
         loading: false,
         data: action.data,
         sortField: action.sortField,
-        sortDirection: action.sortDirection
-      }
+        sortDirection: action.sortDirection })
     case 'initialize_table':
-      return {
-        ...state,
+      return state.merge({
         data: action.data,
         loading: false,
         draw: 1,
         ajax: action.ajax,
         totalRecords: action.totalRecords,
         fields: action.fields,
-        idField: action.idField
-      }
+        idField: action.idField })
     case 'next_page':
-      return {
-        ...state,
+      return state.merge({
         data: action.data,
         page: state.page + 1,
-        loading: false
-      };
+        loading: false })
     case 'previous_page':
-      return {
-        ...state,
+      return state.merge({
         data: action.data,
         page: state.page - 1,
-        loading: false
-      };
+        loading: false })
     default:
       return state;
   }
