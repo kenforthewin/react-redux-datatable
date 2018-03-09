@@ -10737,9 +10737,8 @@ var searchTable = exports.searchTable = function searchTable(searchValue) {
         sortField = _state$dataTableReduc3.sortField;
 
 
-    return requestData(ajax, draw, page, perPage, sortDirection, sortField, searchValue).then(function (responseJson) {
-      var totalRecords = responseJson.totalRecords;
-      var newPage = Math.ceil(totalRecords / perPage) < page ? Math.ceil(totalRecords / perPage) : page;
+    return requestData(ajax, draw, 1, perPage, sortDirection, sortField, searchValue).then(function (responseJson) {
+      var newPage = 1;
       dispatch({
         type: 'search_table',
         data: responseJson.data,

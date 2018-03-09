@@ -65,10 +65,9 @@ export const searchTable = (searchValue) => {
       sortField
     } = state.dataTableReducer;
 
-    return requestData(ajax, draw, page, perPage, sortDirection, sortField, searchValue)
+    return requestData(ajax, draw, 1, perPage, sortDirection, sortField, searchValue)
     .then(responseJson => {
-      const totalRecords = responseJson.totalRecords;
-      const newPage = Math.ceil(totalRecords / perPage) < page ? Math.ceil(totalRecords / perPage) : page;
+      const newPage = 1;
       dispatch({
         type: 'search_table',
         data: responseJson.data,
