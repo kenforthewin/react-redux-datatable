@@ -4,13 +4,14 @@
   "description": "A React and Redux-based table for server-processed data.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Kenny Bergquist",
   "license": "MIT",
   "dependencies": {
+    "webpack": "^2.6.1",
     "bootstrap": "^3.3.7",
-    "merge": "^1.2.0",
     "react": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
@@ -21,6 +22,14 @@
     "url": "git+https://github.com/kenforthewin/react-redux-datatable"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+    "css-loader": "0.28.7",
+    "file-loader": "1.1.5",
+    "style-loader": "0.19.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.5.1"
   }
 }
