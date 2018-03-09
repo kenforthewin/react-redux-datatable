@@ -4842,7 +4842,6 @@ var DataTable = function (_Component) {
   _createClass(DataTable, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this.props.searchTable('');
       this.timer = null;
       this.props.initializeDataTable(this.props.ajax, this.props.fields, this.props.idField);
     }

@@ -16,7 +16,6 @@ const sortLinkStyle = {
 
 class DataTable extends Component {
   componentWillMount() {
-    this.props.searchTable('');
     this.timer = null;
     this.props.initializeDataTable(this.props.ajax, this.props.fields, this.props.idField);
   }
