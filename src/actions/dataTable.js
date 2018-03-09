@@ -59,7 +59,6 @@ export const searchTable = (searchValue) => {
     const {
       ajax,
       draw,
-      page,
       perPage,
       sortDirection, 
       sortField

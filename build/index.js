@@ -10731,7 +10731,6 @@ var searchTable = exports.searchTable = function searchTable(searchValue) {
     var _state$dataTableReduc3 = state.dataTableReducer,
         ajax = _state$dataTableReduc3.ajax,
         draw = _state$dataTableReduc3.draw,
-        page = _state$dataTableReduc3.page,
         perPage = _state$dataTableReduc3.perPage,
         sortDirection = _state$dataTableReduc3.sortDirection,
         sortField = _state$dataTableReduc3.sortField;
