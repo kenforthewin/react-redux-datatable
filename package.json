@@ -1,8 +1,8 @@
 {
   "name": "redux-remote-datatable",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A React and Redux-based table for server-processed data.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
