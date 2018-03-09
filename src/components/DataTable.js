@@ -19,7 +19,6 @@ class DataTable extends Component {
     this.props.searchTable('');
     this.timer = null;
     this.props.initializeDataTable(this.props.ajax, this.props.fields, this.props.idField);
-    this
   }
 
   renderHead() {
@@ -197,7 +196,6 @@ class DataTable extends Component {
         <FormControl
           type="text"
           placeholder="Search"
-          value={this.}
           onChange={this.handleSearchChange.bind(this)}
         />
       </FormGroup>

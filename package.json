@@ -1,6 +1,6 @@
 {
   "name": "redux-remote-datatable",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A React and Redux-based table for server-processed data.",
   "main": "build/index.js",
   "scripts": {
