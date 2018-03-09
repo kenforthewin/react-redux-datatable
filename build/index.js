@@ -10815,7 +10815,7 @@ var ellipRight = exports.ellipRight = function ellipRight() {
 
     var totalPages = Math.ceil(totalRecords / perPage);
     if (totalPages - 4 >= page) {
-      dispatch('table_loading');
+      dispatch({ type: 'table_loading' });
       return requestData(ajax, draw, page + 4, perPage, sortDirection, sortField, searchValue).then(function (responseJson) {
         dispatch({
           type: 'go_to_page',
@@ -10840,7 +10840,7 @@ var ellipLeft = exports.ellipLeft = function ellipLeft() {
         searchValue = _state$dataTableReduc7.searchValue;
 
     if (page >= 4) {
-      dispatch('table_loading');
+      dispatch({ type: 'table_loading' });
       return requestData(ajax, draw, page - 4, perPage, sortDirection, sortField, searchValue).then(function (responseJson) {
         dispatch({
           type: 'go_to_page',

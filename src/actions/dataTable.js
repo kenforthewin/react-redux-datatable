@@ -145,7 +145,7 @@ export const ellipRight = () => {
     } = state.dataTableReducer;
     const totalPages = Math.ceil(totalRecords / perPage);
     if (totalPages - 4 >= page) {
-      dispatch('table_loading')
+      dispatch({ type: 'table_loading' });
       return requestData(ajax, draw, page + 4, perPage, sortDirection, sortField, searchValue)
       .then(responseJson => {
         dispatch({
@@ -171,7 +171,7 @@ export const ellipLeft = () => {
       searchValue
     } = state.dataTableReducer;
     if (page >= 4) {
-      dispatch('table_loading')
+      dispatch({ type: 'table_loading' });
       return requestData(ajax, draw, page - 4, perPage, sortDirection, sortField, searchValue)
       .then(responseJson => {
         dispatch({
