@@ -24,7 +24,7 @@ const appReducer = persistCombineReducers(config, {
 - Add the DataTableRedux component with its requred initialization props.
 
 ```javascript
-import { DataTableRedux } from 'redux-remote-datatable';
+import { DataTableRedux as DataTable } from 'redux-remote-datatable';
 
 ...
 
@@ -32,4 +32,51 @@ import { DataTableRedux } from 'redux-remote-datatable';
   fields={{"Name": "official_name", "Birthday": "birthday", "Thomas ID": "thomas_id" }}
   ajax="http://localhost:3000/legislators"
   idField="id" />
+```
+
+### Initialization props
+
+- `fields`: An object whose keys are the table header titles and whose values correspond with values in the received data objects.
+- `ajax`: The data url.
+- `idField`: The unique identifier field of the received data objects. Used when assigning keys to child elements.
+
+The component will make POST requests to the `ajax` endpoint for data to populate the table. In the body of the POST request will be a JSON object with the following parameters:
+
+### Request parameters
+
+- `draw`: starts at 1 and is incremented by 1 every time data is requested from the remote server and the table is re-drawn.
+- `page`: The current page.
+- `perPage`: The amount of data objects to be requested and displayed per page.
+- `sortField`: The field to sort the data by. Can be null.
+- `sortDirection`: One of `asc` and `desc`.
+- `searchValue`: The user-inputted search string. Default is a blank string.
+
+### Response parameters
+
+- `draw`: echo the draw from the request.
+- `totalRecords`: Record count before pagination.
+- `data`: An array of JSON objects with keys corresponding to the pre-defined fields.
+
+### Example response
+
+```json
+{
+    "draw": "1",
+    "totalRecords": 473,
+    "data": [
+        {
+            "id": 52,
+            "official_name": "Roy Blunt",
+            "thomas_id": "01464",
+            "birthday": "1950-01-10"
+        },
+        {
+            "id": 51,
+            "official_name": "Richard Blumenthal",
+            "thomas_id": "02076",
+            "birthday": "1946-02-13"
+        },
+        ...
+    ]
+}
 ```
