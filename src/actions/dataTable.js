@@ -1,4 +1,4 @@
-export const initializeDataTable = (ajax, fields, idField, initFn) => {
+export const initializeDataTable = (ajax, fields, idField) => {
   return (dispatch, getState) => {
     const state = getState();
     const { 
@@ -16,14 +16,9 @@ export const initializeDataTable = (ajax, fields, idField, initFn) => {
           idField: idField,
           perPage: perPage
         });
-        afterInitialize(initFn);
       })
   }
 };
-
-export const afterInitialize = (fn) => {
-  return fn.call;
-}
 
 export const sort = (field, direction = 'asc') => {
   return (dispatch, getState) => {

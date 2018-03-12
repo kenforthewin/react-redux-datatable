@@ -10680,7 +10680,7 @@ exports.default = function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var initializeDataTable = exports.initializeDataTable = function initializeDataTable(ajax, fields, idField, initFn) {
+var initializeDataTable = exports.initializeDataTable = function initializeDataTable(ajax, fields, idField) {
   return function (dispatch, getState) {
     var state = getState();
     var _state$dataTableReduc = state.dataTableReducer,
@@ -10697,13 +10697,8 @@ var initializeDataTable = exports.initializeDataTable = function initializeDataT
         idField: idField,
         perPage: perPage
       });
-      afterInitialize(initFn);
     });
   };
-};
-
-var afterInitialize = exports.afterInitialize = function afterInitialize(fn) {
-  return fn.call;
 };
 
 var sort = exports.sort = function sort(field) {
