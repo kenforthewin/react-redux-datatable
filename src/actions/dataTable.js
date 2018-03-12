@@ -3,9 +3,11 @@ export const initializeDataTable = (ajax, fields, idField) => {
     const state = getState();
     const { 
       page,
-      perPage
+      perPage,
+      sortDirection, 
+      sortField
     } = state.dataTableReducer;
-      return requestData(ajax, 0, page, perPage, null, null, "")
+      return requestData(ajax, 0, page, perPage, sortDirection, sortField, "")
       .then(responseJson => {
         dispatch({
           type: 'initialize_table',

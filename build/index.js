@@ -10685,9 +10685,11 @@ var initializeDataTable = exports.initializeDataTable = function initializeDataT
     var state = getState();
     var _state$dataTableReduc = state.dataTableReducer,
         page = _state$dataTableReduc.page,
-        perPage = _state$dataTableReduc.perPage;
+        perPage = _state$dataTableReduc.perPage,
+        sortDirection = _state$dataTableReduc.sortDirection,
+        sortField = _state$dataTableReduc.sortField;
 
-    return requestData(ajax, 0, page, perPage, null, null, "").then(function (responseJson) {
+    return requestData(ajax, 0, page, perPage, sortDirection, sortField, "").then(function (responseJson) {
       dispatch({
         type: 'initialize_table',
         data: responseJson.data,
