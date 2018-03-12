@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Table, Pagination, Col, Glyphicon, FormGroup, FormControl } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from 'prop-types';
@@ -20,10 +21,20 @@ class DataTable extends Component {
     this.props.initializeDataTable(this.props.ajax, this.props.fields, this.props.idField);
   }
 
+  columnSize() {
+    const tableSize = Object.keys(this.props.fields).length;
+    let colSize = Math.floor(12 / tableSize);
+    if (colSize === 0)
+      colSize = 1;
+    return 'col-md-' + colSize;
+  }
+
   renderHead() {
     const fields = this.props.fields;
     const keys = Object.keys(fields);
-    const th = keys.map((key) => { return(<th key={key}>{key}<span>{this.renderSort(fields[key])}</span></th>); })
+    const th = keys.map((key) => {
+      return(<th key={key} className={this.columnSize()}>{key}<span>{this.renderSort(fields[key])}</span></th>); 
+    })
     return (
       <thead>
         <tr>
@@ -199,9 +210,6 @@ class DataTable extends Component {
         />
       </FormGroup>
     )
-  }
-
-  componentDidMount() {
   }
 
   render() {

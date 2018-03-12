@@ -62,7 +62,8 @@ export default (state = INITIAL_STATE, action) => {
         ajax: action.ajax,
         totalRecords: action.totalRecords,
         fields: action.fields,
-        idField: action.idField
+        idField: action.idField,
+        searchValue: ''
       }
     case 'next_page':
       return {

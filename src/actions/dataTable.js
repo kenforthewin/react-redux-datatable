@@ -1,13 +1,11 @@
-export const initializeDataTable = (ajax, fields, idField) => {
+export const initializeDataTable = (ajax, fields, idField, initFn) => {
   return (dispatch, getState) => {
     const state = getState();
     const { 
-      draw,
       page,
       perPage
     } = state.dataTableReducer;
-    if (draw === 0) {
-      return requestData(ajax, draw, page, perPage, null, null, "")
+      return requestData(ajax, 0, page, perPage, null, null, "")
       .then(responseJson => {
         dispatch({
           type: 'initialize_table',
@@ -18,12 +16,14 @@ export const initializeDataTable = (ajax, fields, idField) => {
           idField: idField,
           perPage: perPage
         });
+        afterInitialize(initFn);
       })
-    } else {
-      // TODO handle the error.
-    }
   }
 };
+
+export const afterInitialize = (fn) => {
+  return fn.call;
+}
 
 export const sort = (field, direction = 'asc') => {
   return (dispatch, getState) => {
