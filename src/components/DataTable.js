@@ -230,7 +230,7 @@ class DataTable extends Component {
               of {this.getTotalPages()}
             </span>
           </div>
-          {this.renderPageButtons()}
+          {/* {this.renderPageButtons()} */}
         </Col>
         <Col xs={4} className="text-right">
           <div>
