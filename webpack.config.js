@@ -32,6 +32,7 @@ module.exports = {
             }
           ]
         },
+        { test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/, loader: 'url-loader?limit=100000' },
         {
           // Exclude `js` files to keep "css" loader working as it injects
           // its runtime that would otherwise processed through "file" loader.
