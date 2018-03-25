@@ -17,6 +17,7 @@
     "es6-promise": "^4.2.4",
     "es6-promise-promise": "^1.0.0",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
