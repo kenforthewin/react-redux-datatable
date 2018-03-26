@@ -83,4 +83,5 @@ The component will make POST requests to the `ajax` endpoint for data to populat
 
 ## Example backend
 
-An example backend, written in Ruby on Rails, is available [here](https://github.com/kenforthewin/legislators-api).
+- An example backend, written in Ruby on Rails, is available [here](https://github.com/kenforthewin/legislators-api).
+- A separate example backend written in Elixir (Phoenix) [here](https://github.com/kenforthewin/legislators-api-phoenix).
