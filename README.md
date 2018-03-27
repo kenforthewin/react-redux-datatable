@@ -1,5 +1,6 @@
 # redux-remote-datatable
 
+You can now test a live example [here](https://datatable.kenforthewin.com/).
 ![project example](https://storage.googleapis.com/brrrr/better-datatable.gif)
 
 ## Installation
@@ -21,7 +22,7 @@ const appReducer = persistCombineReducers(config, {
 });
 ```
 
-- Add the DataTableRedux component with its requred initialization props.
+- Add the DataTableRedux component with its required initialization props.
 
 ```javascript
 import { DataTableRedux as DataTable } from 'redux-remote-datatable';
