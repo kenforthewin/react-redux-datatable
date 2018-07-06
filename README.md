@@ -1,6 +1,5 @@
 # redux-remote-datatable
 
-You can now test a live example [here](https://datatable.kenforthewin.com/).
 ![project example](https://storage.googleapis.com/brrrr/better-datatable.gif)
 
 ## Installation
